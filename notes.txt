@@ -1,0 +1,2 @@
+HW(12-02-2025):
+    1. filter, reduce, truthy value , falsy value.

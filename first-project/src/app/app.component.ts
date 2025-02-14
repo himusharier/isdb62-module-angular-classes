@@ -37,7 +37,7 @@ import { Component } from '@angular/core';
   // }
   // `,
   template: `
-  <table border="1">
+  <table>
     <thead>
       <tr>
         <th>profile picture</th>
@@ -65,7 +65,12 @@ import { Component } from '@angular/core';
     width: 100px;
   }
   table {
-    border: 1px;
+    width: 50%;
+    border-collapse: collapse;
+  } 
+  tr, th, td {
+    border: 1px solid;
+    text-align: center;
   }
   `
 })
@@ -93,6 +98,22 @@ export class AppComponent {
       country: 'bangladesh',
       // profile: 'https://placebeard.it/250/250'
       profile: 'https://eu.ui-avatars.com/api/?name=faruq'
+    },
+    {
+      name: 'himu',
+      age: 27,
+      city: 'jashore',
+      country: 'bangladesh',
+      // profile: 'https://placebeard.it/250/250'
+      profile: 'https://eu.ui-avatars.com/api/?name=himu'
+    },
+    {
+      name: 'rasel',
+      age: 28,
+      city: 'tangail',
+      country: 'bangladesh',
+      // profile: 'https://placebeard.it/250/250'
+      profile: 'https://eu.ui-avatars.com/api/?name=rasel'
     }
   ]
 

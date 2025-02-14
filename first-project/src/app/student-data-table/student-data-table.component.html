@@ -1,0 +1,24 @@
+<h3>Student Data Table</h3>
+<hr/>
+<table>
+    <thead>
+      <tr>
+        <th>profile picture</th>
+        <th>name</th>
+        <th>age</th>
+        <th>city</th>
+        <th>country</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of data; track user.name) {
+      <tr>
+        <td><img src="{{user.profile}}"></td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.city}}</td>
+        <td>{{user.country}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>

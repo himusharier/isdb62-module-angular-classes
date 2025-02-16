@@ -3,7 +3,13 @@ Avater placeholder image api:
     2. https://ashallendesign.co.uk/blog/13-placeholder-avatar-and-image-websites
     3. https://eu.ui-avatars.com/api/?name=John+Doe&size=250
 
------------------------------------------------------------------------------------------------------------------
+Website inspiration (design):
+	1. https://www.glassdoor.com/index.htm
+
+Code guideline by google:
+    1. https://google.github.io/styleguide/
+
+--------------------------------------------------------------------------------------------------------
 
 HW(12-02-2025):
     1. filter, reduce, truthy value , falsy value.

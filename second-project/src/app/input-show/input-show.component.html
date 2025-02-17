@@ -1,1 +1,6 @@
-<p>input-show works!</p>
+<h3>Show input text on button clicking:</h3>
+<div style="display: flex;">
+    <textarea name="input" id="input"></textarea>
+    <button (click)="onBtnSubmit()">save!</button>
+</div>
+<p style="color: red;">{{ keyTyped }}</p>

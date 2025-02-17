@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './input-show.component.css'
 })
 export class InputShowComponent {
+  keyTyped = '';
 
+  onBtnSubmit() {
+    const output = document.getElementById('input') as HTMLTextAreaElement;
+    this.keyTyped = output.value;
+  }
 }

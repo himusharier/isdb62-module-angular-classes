@@ -29,21 +29,22 @@
           <h5 class="card-title float-start" style="font-size: 72px;"><i class="bi bi-cart-dash-fill"></i></h5>
           <div class="text-end float-end">
             <p style="font-size: 42px;font-weight: 400;">0</p>
-            <p class="card-text">Monthly revenue</p>
+            <p class="card-text">Pending orders</p>
           </div>
         </div>
         <div class="card-footer bg-transparent border-success text-success">
           View Details
           <i class="bi bi-arrow-right-circle-fill float-end"></i>
         </div>
+      </div>
     </div>
     <div class="col">
       <div class="card border-warning mb-3" style="max-width: 18rem;">
-        <div class="card-body text-bg-warning">
+        <div class="card-body text-bg-warning text-white">
           <h5 class="card-title float-start" style="font-size: 72px;"><i class="bi bi-wechat"></i></h5>
           <div class="text-end float-end">
-            <p style="font-size: 42px;font-weight: 400;">0</p>
-            <p class="card-text">Monthly revenue</p>
+            <p style="font-size: 42px;font-weight: 400;">68</p>
+            <p class="card-text">Pending reviews</p>
           </div>
         </div>
         <div class="card-footer bg-transparent border-warning text-warning">
@@ -58,7 +59,7 @@
           <h5 class="card-title float-start" style="font-size: 72px;"><i class="bi bi-person-fill-add"></i></h5>
           <div class="text-end float-end">
             <p style="font-size: 42px;font-weight: 400;">0</p>
-            <p class="card-text">Monthly revenue</p>
+            <p class="card-text">New customers</p>
           </div>
         </div>
         <div class="card-footer bg-transparent border-danger text-danger">
@@ -69,3 +70,10 @@
     </div>
   </div>
 </div>
+
+<!-- data table side by side -->
+ <div class="d-flex">
+  <app-pending-orders></app-pending-orders>
+  <app-latest-reviews></app-latest-reviews>
+</div>
+

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class GradeSystemComponent implements OnInit {
 student = {
     name: 'rasel',
-    marks: 40,
+    marks: 80,
     grade: '',
     status: ''
   }

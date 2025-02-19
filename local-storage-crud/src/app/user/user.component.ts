@@ -42,7 +42,7 @@ export class UserComponent implements OnInit {
     }
 
     //add new data.
-    users.push(this.user);
+    //users.push(this.user);
 
     //set localstorage along with new data.
     localStorage.setItem('users', JSON.stringify(users));

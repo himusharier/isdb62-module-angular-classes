@@ -1,0 +1,12 @@
+<h3>Todo List</h3>
+
+@if (!todoItems().length) {
+    <p>Loading...</p>
+}
+<!-- <p *ngIf="!todoItems().length">Loading...</p> -->
+
+<ul class="todos">
+    @for (todo of todoItems(); track todo.id) {
+        <app-todo-item [todo]="todo"></app-todo-item>
+    }
+</ul>

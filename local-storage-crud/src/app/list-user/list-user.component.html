@@ -1,34 +1,38 @@
 <div class="container mt-5" style="width: 1000px;">
     <h3>List of Users</h3>
     <hr/>
+    @if (users.length > 0) {
     <table class="table table-striped mt-3">
         <thead>
         <tr>
+            <th>Serial</th>
             <th>Name</th>
             <th>Age</th>
             <th>Phone</th>
             <th>Address</th>
+            <th>Options</th>
         </tr>
         </thead>
         <tbody id="tableBody">
+            @for (user of users; track user) {
             <tr>
-                <td>Rasel</td>
-                <td>27</td>
-                <td>018</td>
-                <td>Pollobi</td>
+                <td>{{ users.indexOf(user)+1 }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.address }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm me-1" (click)="updateUser(user)">Update</button>
+                    &nbsp;
+                    <button class="btn btn-danger btn-sm" (click)="deleteUser(user)">Delete</button>
+                </td>
             </tr>
-            <tr>
-                <td>Rasel</td>
-                <td>27</td>
-                <td>018</td>
-                <td>Pollobi</td>
-            </tr>
-            <tr>
-                <td>Rasel</td>
-                <td>27</td>
-                <td>018</td>
-                <td>Pollobi</td>
-            </tr>
+        }
         </tbody>
     </table>
+    } @else {
+        <div class="alert alert-warning">
+            <a>No data found!</a>
+        </div>
+    }
 </div>

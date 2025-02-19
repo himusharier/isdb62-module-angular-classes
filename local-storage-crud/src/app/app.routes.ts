@@ -6,7 +6,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 export const routes: Routes = [
     {path: '', component: WelcomeComponent},
-    {path: 'create-user', component: CreateUserComponent},
-    {path: 'list-user', component: ListUserComponent},
+    // {path: 'create-user', component: CreateUserComponent},
+    {path: 'user', component: CreateUserComponent},
+    {path: 'list', component: ListUserComponent},
     {path: '**', component: NotFoundComponent}
 ];

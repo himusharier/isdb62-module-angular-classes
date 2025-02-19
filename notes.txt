@@ -12,4 +12,15 @@ Code guideline by google:
 --------------------------------------------------------------------------------------------------------
 
 HW(12-02-2025):
-    1. filter, reduce, truthy value , falsy value.
+    1. filter, reduce, map. 
+    2. truthy value , falsy value.
+
+HW(19-02-2025):
+    product id - number
+    product name - string
+    product price - number
+    product quantity - number
+    purchase date - date
+    sell date - data
+    buy from - string
+    sell to - string

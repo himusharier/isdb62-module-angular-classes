@@ -1,3 +1,5 @@
 <app-greeting [message]="homeMessage()"></app-greeting>
-<app-counter></app-counter>
 <input type="text" placeholder="type something..." (keyup)="keyUpHandler($event)">
+<div id="keyOutput">{{ keyOutput }}</div>
+
+<app-counter></app-counter>

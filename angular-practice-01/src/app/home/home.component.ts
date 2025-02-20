@@ -10,8 +10,10 @@ import { CounterComponent } from '../components/counter/counter.component';
 })
 export class HomeComponent {
   homeMessage = signal('hello, world');
+  keyOutput: string = '';
 
   keyUpHandler(event: KeyboardEvent) {
     console.log(`user pressed the ${event.key} key`);
+    this.keyOutput = `user pressed the ${event.key} key`;
   }
 }

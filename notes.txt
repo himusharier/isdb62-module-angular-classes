@@ -9,6 +9,9 @@ Website inspiration (design):
 Code guideline by google:
     1. https://google.github.io/styleguide/
 
+Youtube tutorials:
+    1. https://www.youtube.com/playlist?list=PLBcycf_KNrYpgj_yzcNgW9I3_2fpiGXXg
+
 --------------------------------------------------------------------------------------------------------
 
 HW(12-02-2025):

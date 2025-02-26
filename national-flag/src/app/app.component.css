@@ -1,0 +1,16 @@
+.main-container {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.flag-rectangle {
+    position: absolute;
+}
+
+.flag-circle {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 130px;
+}

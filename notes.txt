@@ -27,3 +27,9 @@ HW(19-02-2025):
     sell date - data
     buy from - string
     sell to - string
+
+Exam:
+    09/03/2025 - monthly : angular full (MCQ)
+                evidence : project with localstorage
+
+    19/03/2025 - mid monthly

@@ -10,13 +10,15 @@ import * as bootstrap from 'bootstrap';
 export class HeaderComponent {
 
   private modal: bootstrap.Modal | null = null;
+  isEditing: boolean = false;
 
   openModal() {
-      const modalElement = document.getElementById('teacherModal');
-      if (modalElement) {
-        this.modal = new bootstrap.Modal(modalElement);
-        this.modal.show();
-      }
+    const modalElement = document.getElementById('teacherModal');
+    if (modalElement) {
+      this.modal = new bootstrap.Modal(modalElement);
+      this.modal.show();
+      this.isEditing = false;
     }
+  }
 
 }

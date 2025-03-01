@@ -12,7 +12,7 @@ export class TeacherComponent {
 }
 
 export class Teacher {
-  id: Number;
+  id: number;
   name: string;
   schoolName: string;
   isHeadTeacher: boolean;

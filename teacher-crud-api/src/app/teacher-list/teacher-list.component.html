@@ -9,7 +9,7 @@
           <h1 class="modal-title fs-5">Add Teacher</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form (submit)="addTeacher()">
+        <form (submit)="saveTeacher()">
           <div class="modal-body">
             <!-- Name -->
             <div class="mb-3">
@@ -55,7 +55,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update' : 'Save' }}</button>
           </div>
         </form>
       </div>
@@ -74,6 +74,7 @@
               <th>Join Date</th>
               <th>Head Teacher</th>
               <th>Aggressive</th>
+              <th>Options</th>
           </tr>
       </thead>
       <tbody>
@@ -88,6 +89,10 @@
                   <td>{{ teacher.joiningDate }}</td> 
                   <td>{{ teacher.isHeadTeacher ? 'Yes' : 'No' }}</td>
                   <td>{{ teacher.isAggressive ? 'Yes' : 'No' }}</td>
+                  <td>
+                    <button type="button" class="btn btn-warning btn-sm" (click)="openModal(teacher)">Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm float-end" (click)="deleteTeacher(teacher.id)">Delete</button>
+                  </td>
               </tr>
           }
       </tbody>

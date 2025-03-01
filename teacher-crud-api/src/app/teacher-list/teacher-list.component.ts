@@ -13,7 +13,6 @@ import * as bootstrap from 'bootstrap';
 export class TeacherListComponent implements OnInit {
   
   teachers: Teacher[] = [];
-
   newTeacher: Teacher = {
     id: 0,
     name: '',
@@ -26,14 +25,13 @@ export class TeacherListComponent implements OnInit {
   };
   // or,
   // newTeacher = new Teacher(0, '',);
-
   private modal: bootstrap.Modal | null = null;
+  isEditing: boolean = false;
 
   constructor(private teacherApiService: TeacherApiService) {}
 
   ngOnInit(): void {
     this.fetchTeachers();
-
     const modalElement = document.getElementById('teacherModal');
     if (modalElement) {
       this.modal = new bootstrap.Modal(modalElement);
@@ -48,18 +46,21 @@ export class TeacherListComponent implements OnInit {
     )
   }
 
+  openModal(teacher?: Teacher) {
+    if (teacher) {
+      this.newTeacher = { ...teacher };
+      this.isEditing = true;
+    } else {
+      /*this.newTeacher = new Teacher(0, '', '', false, '', 0, new Date(), false);
+      this.isEditing = false;*/
+      this.resetForm();
+    }
 
-  addTeacher() {
-    this.teacherApiService.addTeacher(this.newTeacher).subscribe(
-      (response) => {
-        this.teachers.push(response);
-        this.modal?.hide();
-        this.resetForm();
-      },
-      (error) => {
-        console.error('error adding teacher: ', error);
-      }
-    )
+    const modalElement = document.getElementById('teacherModal');
+    if (modalElement) {
+      this.modal = new bootstrap.Modal(modalElement);
+      this.modal.show();
+    }
   }
 
   resetForm() {
@@ -74,6 +75,64 @@ export class TeacherListComponent implements OnInit {
       joiningDate: new Date(),
       isAggressive: false
     };
+    this.isEditing = false;
+  }
+
+  /*addTeacher() {
+    this.teacherApiService.addTeacher(this.newTeacher).subscribe(
+      (response) => {
+        this.teachers.push(response);
+        // this.modal?.hide();
+        window.location.reload();
+        this.resetForm();
+      },
+      (error) => {
+        console.error('error adding teacher: ', error);
+      }
+    )
+  }*/
+
+  saveTeacher() {
+    if (this.newTeacher) {
+      if (this.isEditing) {
+        this.teacherApiService.updateTeacher(this.newTeacher).subscribe(
+          (response) => {
+            const index = this.teachers.findIndex(t => t.id === response.id);
+            if (index !== -1) {
+              this.teachers[index] = response;
+            }
+            this.modal?.hide();
+          },
+          (error) => {
+            console.error('error updating teacher: ', error);
+          }
+        );
+      } else {
+        this.teacherApiService.addTeacher(this.newTeacher).subscribe(
+          (response) => {
+            this.teachers.push(response);
+            // this.modal?.hide();
+            window.location.reload();
+            this.resetForm();
+          },
+          (error) => {
+            console.error('error adding teacher: ', error);
+          }
+        );
+      }
+    }
+  }
+
+  deleteTeacher(id: number) {
+    this.teacherApiService.deleteTeacher(id).subscribe(
+      () => {
+        this.teachers = this.teachers.filter(t => t.id !== id);
+        //window.location.reload();
+      },
+      (error) => {
+        console.log('error deleting teacher: ', error);
+      }
+    )
   }
 
 }

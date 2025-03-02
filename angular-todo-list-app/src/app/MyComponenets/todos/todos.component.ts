@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../../todo';
 import { CommonModule } from '@angular/common';
+import { TodoItemComponent } from "../todo-item/todo-item.component";
 
 @Component({
   selector: 'app-todos',
-  imports: [CommonModule],
+  imports: [CommonModule, TodoItemComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.css'
 })

@@ -12,6 +12,9 @@ Code guideline by google:
 Youtube tutorials:
     1. https://www.youtube.com/playlist?list=PLBcycf_KNrYpgj_yzcNgW9I3_2fpiGXXg
 
+Quiz website design:
+    1. https://www.paigebrunton.com/blog/create-quiz-on-squarespace
+
 --------------------------------------------------------------------------------------------------------
 
 HW(12-02-2025):

@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { TodosComponent } from "./MyComponenets/todos/todos.component";
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, TodosComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'angular-todo-list-app';
+}

@@ -4,12 +4,12 @@ import { HeaderComponent } from "../components/header/header.component";
 import { HeaderTitleService } from '../services/header-title.service';
 
 @Component({
-  selector: 'app-quiz',
+  selector: 'app-profile',
   imports: [NavbarComponent, HeaderComponent],
-  templateUrl: './quiz.component.html',
-  styleUrl: './quiz.component.css'
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.css'
 })
-export class QuizComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
   constructor(private headerTitleService: HeaderTitleService) {}
 
@@ -18,6 +18,6 @@ export class QuizComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.updateHeaderTitleValue("Quiz List");
+    this.updateHeaderTitleValue("Profile");
   }
 }

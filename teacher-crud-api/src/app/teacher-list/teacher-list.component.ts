@@ -30,12 +30,19 @@ export class TeacherListComponent implements OnInit {
 
   constructor(private teacherApiService: TeacherApiService) {}
 
+  localApiData: String = '';
+
   ngOnInit(): void {
     this.fetchTeachers();
     const modalElement = document.getElementById('teacherModal');
     if (modalElement) {
       this.modal = new bootstrap.Modal(modalElement);
     }
+
+    
+    this.teacherApiService.callLocalApi().subscribe(data => {
+      this.localApiData = data;
+    });
   }
 
   fetchTeachers() {

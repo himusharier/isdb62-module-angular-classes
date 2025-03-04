@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Setup Questions</h2>
+  <input type="text" [(ngModel)]="newQuestion.text" placeholder="Enter question" class="input-field">
+  <div *ngFor="let option of newQuestion.options; let i = index" class="option-group">
+    <input type="text" [value]="option" (input)="updateOption(i, $event)" placeholder="Option {{i+1}}" class="input-field">
+    <button (click)="removeOption(i)" *ngIf="newQuestion.options.length > 1" class="remove-btn">Remove</button>
+  </div>
+  <button (click)="addOption()" class="add-btn">Add Option</button>
+  <button (click)="addQuestion()" class="save-btn">Save Question</button>
+</div>
+
+<h2>Saved Questions</h2>
+<div *ngFor="let question of questions" class="question-container">
+  <p class="question-text"><strong>{{ question.text }}</strong></p>
+  <ul>
+    <li *ngFor="let option of question.options" class="option-item">{{ option }}</li>
+  </ul>
+</div>

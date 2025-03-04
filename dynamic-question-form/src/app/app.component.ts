@@ -4,7 +4,7 @@ import { QuestionFormComponent } from "./question-form/question-form.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, QuestionFormComponent],
+  imports: [QuestionFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

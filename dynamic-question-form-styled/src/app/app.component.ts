@@ -4,7 +4,7 @@ import { QuestionSetupComponent } from "./question-setup/question-setup.componen
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, QuestionSetupComponent],
+  imports: [QuestionSetupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

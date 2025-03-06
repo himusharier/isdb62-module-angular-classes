@@ -1,0 +1,15 @@
+<div class="quiz-container">
+  <h1>Quiz App</h1>
+  <div *ngIf="currentQuestionIndex < totalQuestions">
+    <h2>{{ question }}</h2>
+    <div class="options">
+      <button *ngFor="let option of options" (click)="selectOption(option)">
+        {{ option }}
+      </button>
+    </div>
+    <div id="timer">Time Left: {{ timeLeft }}s</div>
+    <div id="progress">
+      Question {{ currentQuestionIndex + 1 }} of {{ totalQuestions }}
+    </div>
+  </div>
+</div>

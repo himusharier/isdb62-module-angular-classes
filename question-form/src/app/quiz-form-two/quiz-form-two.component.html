@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>Generate a Question</h2>
+    
+    <form (ngSubmit)="saveQuestion()">
+      <div>
+        <label for="question">Question</label>
+        <input id="question" [(ngModel)]="questionText" name="question" required />
+      </div>
+  
+      <div *ngFor="let option of modelOptions; let i = index">
+        <label for="option{{ i }}">Option {{ i + 1 }}</label>
+        <input 
+          id="option{{ i }}" 
+          [(ngModel)]="modelOptions[i]" 
+          name="option{{ i }}" 
+          required 
+          placeholder="Enter option {{ i + 1 }}"
+          (blur)="updateOptions()"
+        />
+      </div>
+  
+      <div>
+        <label for="correctAnswer">Correct Answer</label>
+        <select id="correctAnswer" [(ngModel)]="correctAnswer" name="correctAnswer" required>
+          <option value="">Select Correct Answer</option>
+          <option *ngFor="let option of modelOptions" [value]="option">{{ option }}</option>
+        </select>
+      </div>
+  
+      <button type="submit">Save Question</button>
+    </form>
+  
+    <hr />
+  
+    <h3>Saved Questions</h3>
+    <div *ngIf="savedQuestions.length > 0">
+      <ul>
+        <li *ngFor="let savedQuestion of savedQuestions">
+          <strong>{{ savedQuestion.question }}</strong><br />
+          Options:
+          <ul>
+            <li *ngFor="let option of savedQuestion.options">{{ option }}</li>
+          </ul>
+          Correct Answer: {{ savedQuestion.correctAnswer }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="savedQuestions.length === 0">No questions saved yet.</div>
+  </div>
+  

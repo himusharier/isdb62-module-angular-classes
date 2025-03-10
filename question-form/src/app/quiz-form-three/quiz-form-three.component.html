@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+      <div class="quiz-card">
+        <h2 class="quiz-title">Quiz Questions</h2>
+        <div *ngFor="let q of qBank" class="question">
+          <div class="question-card">
+            <h3 class="question-text">{{ q.question }}</h3>
+            <div class="options">
+              <div *ngFor="let option of q.options">
+                <input type="radio" [formControlName]="q.id.toString()" [value]="option" id="option{{ q.id }}-{{ option }}">
+                <label for="option{{ q.id }}-{{ option }}">{{ option }}</label>
+              </div>
+            </div>
+            <div *ngIf="showResults" class="feedback">
+              <p *ngIf="q.selected === q.answer && q.selected !== ''" class="correct">Correct!</p>
+              <p *ngIf="q.selected !== q.answer && q.selected !== ''" class="incorrect">Incorrect. Correct Answer: {{ q.answer }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="submit-btn">
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+      </div>
+    </form>
+  
+    <div *ngIf="showResults" class="score">
+      <h2>Your Score: {{ score }} / {{ qBank.length }}</h2>
+    </div>
+  </div>
+  

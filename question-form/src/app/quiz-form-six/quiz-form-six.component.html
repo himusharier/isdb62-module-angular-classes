@@ -1,0 +1,42 @@
+<div class="container">
+  <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="question">Question:</label>
+      <input id="question" formControlName="question" type="text" class="form-control" placeholder="Enter the question">
+    </div>
+
+    <div formArrayName="options" class="form-group">
+      <div *ngFor="let option of options.controls; let i = index" [formGroupName]="i">
+        <label for="option{{ i }}">Option {{ i + 1 }}:</label>
+        <input id="option{{ i }}" formControlName="optionText" type="text" class="form-control" placeholder="Enter option text">
+        <button type="button" class="btn btn-danger" (click)="removeOption(i)" *ngIf="options.length > 1">Remove Option</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="correctAnswer">Select Correct Answer:</label>
+      <select id="correctAnswer" formControlName="correctAnswer" class="form-control">
+        <option value="" disabled>Select the correct option</option>
+        <option *ngFor="let option of options.controls; let i = index" [value]="'option' + (i + 1)">
+          Option {{ i + 1 }}
+        </option>
+      </select>
+    </div>
+
+    <button type="button" class="btn btn-secondary" (click)="addOption()">Add Option</button>
+    <button type="submit" class="btn btn-primary" [disabled]="questionForm.invalid">Add Question</button>
+  </form>
+
+  <div class="saved-questions" *ngIf="questions.length > 0">
+    <h2>Saved Questions</h2>
+    <ul>
+      <li *ngFor="let question of questions">
+        <h3>{{ question.question }}</h3>
+        <ul>
+          <li *ngFor="let option of question.options">{{ option }}</li>
+        </ul>
+        <p><strong>Correct Answer:</strong> {{ question.correctAnswer }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
